@@ -2,26 +2,33 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "newStorageAccountName": {
-      "value": ""
-    },
     "location": {
-      "value": ""
+      "type":"string",
+      "allowedValues": [
+          "West US",
+          "Est US"
+      ],
+      "metadata": {
+        "desciption":"Location of resources"
+      }
     },
-    "vmName": {
-      "value": ""
-    },
-    "vmSize": {
-      "value": ""
-    },
-    "adminUserName": {
-      "value": ""
-    },
-    "adminPassword": {
-      "value": ""
-    },
-    "scaleNumber": {
-      "value": 3
-    }
+    "virtualNetworkName": { 
+       "value": "WebPlusSql_VNet" 
+     }, 
+     "addressPrefix": { 
+       "value": "10.0.0.0/16" 
+    }, 
+    "FESubnetPrefix": { 
+      "value": "10.0.0.0/24" 
+     }, 
+     "DBSubnetPrefix": { 
+       "value": "10.0.1.0/24" 
+     }, 
+     "FENSGName": { 
+       "value": "fensg" 
+     }, 
+     "DBNSGName": { 
+        "value": "dbnsg" 
+    } 
   }
 }
